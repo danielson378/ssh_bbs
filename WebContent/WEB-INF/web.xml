@@ -20,7 +20,8 @@
 	<!-- struts拦截器配置 -->
     <filter>
         <filter-name>struts2</filter-name>
-        <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
+<!--         <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class> -->
+        <filter-class>com.action.MyStrutsFilter</filter-class>
     </filter>
 
 	<!-- struts拦截器过滤路径 -->

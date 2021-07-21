@@ -7,6 +7,9 @@
 <title>${post.title}</title>
 <link href="css/style_1_common.css"rel="stylesheet" type="text/css">
 <link href="css/style_1_forum_viewthread.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="../ueditor/ueditor.all.js"></script>
+<script type="text/javascript" src="../ueditor/lang/zh-cn/zh-cn.js"></script>
 </head>
 <body>
 
@@ -295,15 +298,19 @@
 								</c:if>
 								
 								<c:if test="${sessionScope.user!=null}">
-									<div class="cl">
-										<div class="hasfsl" id="fastposteditor">
-											<div class="tedt">
-												<div class="area">
-													<textarea rows="6" cols="80" name="reply.content" id="fastpostmessage" class="pt" placeholder="请输入回复内容..."></textarea>
-												</div>
-											</div>
-										</div>
-									</div>
+<!-- 									<div class="cl"> -->
+<!-- 										<div class="hasfsl" id="fastposteditor"> -->
+<!-- 											<div class="tedt"> -->
+<!-- 												<div class="area"> -->
+<!-- 													<textarea rows="6" cols="80" name="reply.content" id="fastpostmessage" class="pt" placeholder="请输入回复内容..."></textarea> -->
+<!-- 												</div> -->
+<!-- 											</div> -->
+<!-- 										</div> -->
+<!-- 									</div> -->
+									<!-- 加载编辑器的容器 -->
+									<script id="fastpostmessage" name="reply.content" type="text/plain" style="width:100%; height:300px;">
+										这里写你的初始化内容
+									</script>
 									<p class="ptm pnpost">
 										<button type="submit" name="topicsubmit" id="fastpostsubmit" value="topicsubmit" class="pn pnc">
 											<strong>发表回复</strong>
@@ -322,6 +329,11 @@
 
 </div>
 
+
+	<!-- 实例化编辑器 -->
+<script type="text/javascript">
+	var ue = UE.getEditor('fastpostmessage');
+</script>
 <jsp:include page="footer.jsp"/>
 
 </body>
